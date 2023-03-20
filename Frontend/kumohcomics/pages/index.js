@@ -1,9 +1,21 @@
 import React from "react";
+import Slider from './../components/Slider';
 
 function index() {
     return (
         <div>
-            <div></div>
+            <Slider></Slider>
+            <div>
+                a<br/>
+                a<br/>
+                a<br/>
+                a<br/>
+                a<br/>
+                a<br/>
+                a<br/>
+                a<br/>
+                
+            </div>
         </div>
     );
 }
