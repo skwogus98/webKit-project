@@ -14,7 +14,7 @@ function Footer() {
                     <Link href="#">개인정보취급방침</Link>
                     <Link href="#">이용약관</Link>
                 </div>
-                <div className="text-sm text-gray-600">Copyright ⓒ Sigongsa Inc. All Rights Reserved</div>
+                <div className="text-sm text-gray-600">Copyright ⓒ JaeHyun Inc. All Rights Reserved</div>
             </div>
         </div>
     );

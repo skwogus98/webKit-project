@@ -6,7 +6,7 @@ function Navigation() {
     const router = useRouter();
 
     return (
-        <div>
+        <div className="my-8 font-bold text-lg">
             {router.pathname == "/" ? "Home" : router.query.category}
             {router.query.genre != null ? " / " + router.query.genre : ""}
         </div>
