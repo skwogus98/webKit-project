@@ -16,6 +16,7 @@ public class Book {
     private String title;
     private String category;
     private String nation;
+    private String genre;
     private int price;
     private Date insert_date = new Date();
 }
