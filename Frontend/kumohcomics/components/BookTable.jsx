@@ -1,6 +1,13 @@
+import Link from "next/link";
 import React from "react";
+import { useState, useEffect } from "react";
 
 function BookTable(props) {
+    const [bookList, setBookList] = useState([])
+    useEffect(()=>{
+        //console.log(props.books)
+        setBookList(props.books ? props.books : [])
+    }, [props.books])
     return (
         <div>
             <table className="w-full table-auto">
@@ -13,11 +20,14 @@ function BookTable(props) {
                 </thead>
                 <tbody>
                     {
-                        props.books.map((value, key)=>{
+                        
+                        bookList.map((value, key)=>{
                             return(
                                 <tr key={key} className="border-b ">
                                     <td className="p-2">
-                                        {value.title}
+                                        <Link href={"/bookDetail/"+value.id}>
+                                            {value.title}
+                                        </Link>
                                     </td>
                                     <td className="text-center p-2">
                                         {value.category}
