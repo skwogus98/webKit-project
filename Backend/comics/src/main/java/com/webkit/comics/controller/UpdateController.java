@@ -4,6 +4,7 @@ import com.webkit.comics.domain.Book;
 import com.webkit.comics.service.BookService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,6 +14,7 @@ public class UpdateController {
     @Autowired
     BookService bookService = new BookService();
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping("/update")
     String updateBook(Book book){
         bookService.persist(book);
