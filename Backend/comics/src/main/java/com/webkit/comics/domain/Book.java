@@ -10,7 +10,7 @@ import java.util.Date;
 @Table(name = "books")
 public class Book {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
     private String title;
@@ -18,5 +18,6 @@ public class Book {
     private String nation;
     private String genre;
     private int price;
-    private Date insert_date = new Date();
+    @Column(name = "insert_date")
+    private Date date = new Date();
 }

@@ -14,8 +14,12 @@ public class CreateController {
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping("/insert")
-    String createBook(Book book) {
+    String createBook(@RequestBody Book book) {
         bookService.persist(book);
         return "ok";
     }
+//    Book createBook(@RequestBody Book book) {
+//        return book;
+//    }
+
 }

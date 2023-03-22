@@ -14,11 +14,15 @@ public interface BookRepository extends CrudRepository<Book, Long> {
 
     public List<Book> findById(int id);
 
-    public List<Book> findTop10By();
+    public List<Book> findTop10ByOrderByDateDesc();
 
-    public List<Book> findTop10ByNation(String nation);
+    public List<Book> findTop10ByNationOrderByDateDesc(String nation);
 
-    public List<Book> findTop10ByNationAndGenre(String nation, String genre);
+    public List<Book> findTop10ByNationAndGenreOrderByDateDesc(String nation, String genre);
 
-    public List<Book> findBooksByTitleContains(String title);
+    public List<Book> findBooksByTitleContainsOrCategoryContains(String title, String category);
+
+    public List<Book> findBooksByNationAndTitleContainsAndCategoryContains(String nation, String title, String category);
+
+    public List<Book> findBooksByNationAndGenreAndTitleContainsAndCategoryContains(String nation, String genre, String title, String category);
 }
