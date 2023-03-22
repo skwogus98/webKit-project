@@ -51,7 +51,7 @@ function Carousel(props) {
     }
 
     return (
-        <div className="flex items-center my-6">
+        <div className="flex items-center my-6 relative z-0">
             <div>
                 <button onClick={leftButton} className="rounded-full p-2 mx-4">
                     ＜

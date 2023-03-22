@@ -28,9 +28,25 @@ function Menu() {
                         <div onMouseEnter={() => mouseOn(key)} className="z-30 relative">
                             <Link href={menu.url}>{menu.menu}</Link>
                         </div>
-                        {
-                            menu.category.length==0? null:
-                            (<DropDown visibility={isMenusOpen[key]} onMouseLeave={() => mouseLeave(key)}>
+                        <div className="hidden sm:block">
+                            {
+                                menu.category.length==0? null:
+                                (<DropDown visibility={isMenusOpen[key]} onMouseLeave={() => mouseLeave(key)}>
+                                    <ul>
+                                        {menu.category.map((category, key) => {
+                                            return (
+                                                    <li key={key}>
+                                                        <Link href={menu.url + "?genre=" + category}>{category}</Link>
+                                                    </li>
+                                            );
+                                        })}
+                                    </ul>
+                                </DropDown>)
+                            }
+                        </div>
+                        <div className="block sm:hidden">
+                            {menu.category.length==0? null:
+                            (
                                 <ul>
                                     {menu.category.map((category, key) => {
                                         return (
@@ -39,9 +55,8 @@ function Menu() {
                                                 </li>
                                         );
                                     })}
-                                </ul>
-                            </DropDown>)
-                        }
+                                </ul>)}
+                        </div>
                     </div>
                 );
             })}

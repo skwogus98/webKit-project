@@ -46,8 +46,10 @@ function index() {
 
     return (
         <div>
-            <p>추천 도서</p>
-            <Carousel carousels={carousels} />
+            <div className="mt-20">
+                <p>추천 도서</p>
+                <Carousel carousels={carousels} />
+            </div>
             <Navigation />
             <Search changeList={changeList} />
             <BookTable books={books} />

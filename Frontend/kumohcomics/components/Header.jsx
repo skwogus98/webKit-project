@@ -8,10 +8,16 @@ function Header() {
     return(
         <div className="shadow-md">
             <div className="max-w-5xl mx-auto flex justify-center sm:justify-between p-8">
-                <div>
-                    <Link href="/" className="flex justify-start space-x-4 items-center text-2xl">
+                <div className="hidden sm:block">
+                    <Link href="/" className="flex justify-start space-x-4 items-center text-2xl ">
                         <Image src={ReadIcon} alt="icon" className="w-14"/>
                         <p>Kumoh Comics</p>
+                    </Link>
+                </div>
+                <div className="block sm:hidden">
+                    <Link href="/" className="flex justify-start space-x-4 items-center text-2xl">
+                        <Image src={ReadIcon} alt="icon" className="w-14"/>
+                        <p>Kumoh Comics Mobile</p>
                     </Link>
                 </div>
                 <div className="hidden sm:block space-x-4">
