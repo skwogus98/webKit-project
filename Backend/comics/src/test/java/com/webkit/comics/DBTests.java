@@ -26,7 +26,7 @@ public class DBTests {
 //    }
     @Test
     void detailSearch() {
-        List<Book> bookList = bookRepository.findBooksByNationAndGenreAndTitleContainsAndCategoryContains("일본 만화", "기획도서", "2", "ts");
+        List<Book> bookList = bookRepository.findBooksByNationAndTitleContainsAndCategoryContains("일본 만화", "2", "2");
         for (int i = 0; i < bookList.size(); i++) {
             System.out.println(bookList.get(i).getTitle());
         }
