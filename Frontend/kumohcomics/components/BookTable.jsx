@@ -10,6 +10,7 @@ function BookTable(props) {
     }, [props.books])
     return (
         <div>
+            <input type="number" />
             <table className="w-full table-auto">
                 <thead className="border-b bg-gray-300">
                     <tr>

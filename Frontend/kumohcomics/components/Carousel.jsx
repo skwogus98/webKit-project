@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 
@@ -36,7 +37,7 @@ function Carousel(props) {
             }
         }, [delay]); // delay가 바뀔 때마다 새로 실행된다.
     }
-    const [delay, setDelay] = useState(2000)
+    const [delay, setDelay] = useState(2000);
     useInterval(rightButton, delay);
 
     function leftButton() {
@@ -50,7 +51,7 @@ function Carousel(props) {
     }
 
     return (
-        <div className="flex items-center my-6">
+        <div className="flex items-center my-6 relative z-0">
             <div>
                 <button onClick={leftButton} className="rounded-full p-2 mx-4">
                     ＜
@@ -64,8 +65,10 @@ function Carousel(props) {
                 >
                     {carousels.map((value, key) => {
                         return (
-                            <div key={key} className="border-black border-2 w-1/5 p-4" onMouseEnter={() => (setDelay(null))} onMouseLeave={() => (setDelay(2000))}>
-                                {value.img}
+                            <div key={key} className="w-1/5 p-4" onMouseEnter={() => setDelay(null)} onMouseLeave={() => setDelay(2000)}>
+                                <Link href={"/bookDetail/" + value.id}>
+                                    <img src={value.src} />
+                                </Link>
                             </div>
                         );
                     })}
