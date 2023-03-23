@@ -7,7 +7,7 @@ function DropDown(props) {
         setVisible(props.visibility);
     }, [props.visibility]);
     return (
-        <div className={"absolute top-32 w-32 z-200 " + (visible ? "" : "hidden")}
+        <div className={"absolute top-0 w-32 z-20 drop-shadow-lg duration-150 translate-y-32" + (visible ? "" : " hidden")}
         onMouseLeave={props.onMouseLeave}
         >
             <div className="mt-8 border-blue-200 border py-2 px-4 rounded-xl bg-blue-200 text-left space-y-4">

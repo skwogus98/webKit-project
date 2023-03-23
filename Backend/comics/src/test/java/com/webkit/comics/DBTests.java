@@ -24,11 +24,11 @@ public class DBTests {
 //            System.out.println(bookList.get(i).getTitle());
 //        }
 //    }
-    @Test
-    void detailSearch() {
-        List<Book> bookList = bookRepository.findBooksByNationAndTitleContainsAndCategoryContains("일본 만화", "2", "2");
-        for (int i = 0; i < bookList.size(); i++) {
-            System.out.println(bookList.get(i).getTitle());
-        }
-    }
+//    @Test
+//    void detailSearch() {
+//        List<Book> bookList = bookRepository.findBooksByTitleContainsOrCategoryContainsAndNation("야구", "야구", "일본 만화");
+//        for (int i = 0; i < bookList.size(); i++) {
+//            System.out.println(bookList.get(i).getId());
+//        }
+//    }
 }

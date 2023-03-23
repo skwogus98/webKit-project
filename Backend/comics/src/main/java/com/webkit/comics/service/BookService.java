@@ -25,31 +25,39 @@ public class BookService {
         bookRepository.deleteBookById(id);
     }
 
-    public List<Book> findBook(int id){
+    public List<Book> findBook(int id) {
         return bookRepository.findById(id);
     }
 
-    public List<Book> findBooks(String nation, String genre){
-        if(nation==""){
+    public List<Book> findBooks(String nation, String genre) {
+        if (nation == "") {
             return bookRepository.findTop10ByOrderByDateDesc();
-        }
-        else if(genre==""){
+        } else if (genre == "") {
             return bookRepository.findTop10ByNationOrderByDateDesc(nation);
-        }
-        else{
+        } else {
             return bookRepository.findTop10ByNationAndGenreOrderByDateDesc(nation, genre);
         }
     }
 
-    public List<Book> searchBook(String nation, String genre, String title){
-        if(nation==""){
-            return bookRepository.findBooksByTitleContainsOrCategoryContains(title, title);
-        }
-        else if(genre==""){
-            return bookRepository.findBooksByNationAndTitleContainsAndCategoryContains(nation, title, title);
-        }
-        else {
-            return bookRepository.findBooksByNationAndGenreAndTitleContainsAndCategoryContains(nation, genre, title, title);
+    public List<Book> searchBook(String nation, String genre, String title, int price) {
+        if (price < 0) {
+            if (nation == "") {
+                return bookRepository.findBooksByTitleContainsOrCategoryContains(title, title);
+            } else if (genre == "") {
+                return bookRepository.findBooksByTitleContainsOrCategoryContainsAndNation(title, title, nation);
+            } else {
+                System.out.println(nation);
+                System.out.println(genre);
+                return bookRepository.findBooksByTitleContainsOrCategoryContainsAndNationAndGenre(title, title, nation, genre);
+            }
+        } else {
+            if (nation == "") {
+                return bookRepository.findBooksByTitleContainsOrCategoryContainsAndPriceLessThanEqual(title, title, price);
+            } else if (genre == "") {
+                return bookRepository.findBooksByTitleContainsOrCategoryContainsAndNationAndPriceLessThanEqual(title, title, nation, price);
+            } else {
+                return bookRepository.findBooksByTitleContainsOrCategoryContainsAndNationAndGenreAndPriceLessThanEqual(title, title, nation, genre, price);
+            }
         }
     }
 }

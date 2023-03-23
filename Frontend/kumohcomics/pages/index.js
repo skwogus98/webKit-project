@@ -8,16 +8,16 @@ import axios from "axios";
 
 function index() {
     var carousels = [
-        { id: 1, src: "https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9788934926467.jpg" }, //식객
+        { id: 7, src: "https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9788934926467.jpg" }, //식객
         { id: 2, src: "https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791160859720.jpg" }, //오니마이
-        { id: 3, src: "https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791169255783.jpg" }, //슈퍼맨
-        { id: 4, src: "https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791169254526.jpg" }, //배트맨
-        { id: 5, src: "https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791133430826.jpg" }, //h2
-        { id: 6, src: "https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9788925833637.jpg" }, //공포의 외인구단
-        { id: 7, src: "https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9788959194117.jpg" }, //살인자ㅇ난감
-        { id: 8, src: "https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9788952772510.jpg" }, //스파이더 맨
-        { id: 9, src: "https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791133400430.jpg" }, //보쿠걸
-        { id: 10, src: "https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791136267498.jpg" }, //철야의 노래
+        { id: 1, src: "https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791169255783.jpg" }, //슈퍼맨
+        { id: 0, src: "https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791169254526.jpg" }, //배트맨
+        { id: 11, src: "https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791133430826.jpg" }, //h2
+        { id: 13, src: "https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9788925833637.jpg" }, //공포의 외인구단
+        { id: 17, src: "https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9788959194117.jpg" }, //살인자ㅇ난감
+        { id: 10, src: "https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9788952772510.jpg" }, //스파이더 맨
+        { id: 15, src: "https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791133400430.jpg" }, //보쿠걸
+        { id: 14, src: "https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791136267498.jpg" }, //철야의 노래
     ];
     const [books, setBooks] = useState([]);
     async function getBookList() {

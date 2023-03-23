@@ -22,7 +22,13 @@ public interface BookRepository extends CrudRepository<Book, Long> {
 
     public List<Book> findBooksByTitleContainsOrCategoryContains(String title, String category);
 
-    public List<Book> findBooksByNationAndTitleContainsAndCategoryContains(String nation, String title, String category);
+    public List<Book> findBooksByTitleContainsOrCategoryContainsAndNation(String title, String category, String nation);
 
-    public List<Book> findBooksByNationAndGenreAndTitleContainsAndCategoryContains(String nation, String genre, String title, String category);
+    public List<Book> findBooksByTitleContainsOrCategoryContainsAndNationAndGenre(String title, String category, String nation, String genre);
+
+    public List<Book> findBooksByTitleContainsOrCategoryContainsAndPriceLessThanEqual(String title, String category, int price);
+
+    public List<Book> findBooksByTitleContainsOrCategoryContainsAndNationAndPriceLessThanEqual(String title, String category, String nation, int price);
+
+    public List<Book> findBooksByTitleContainsOrCategoryContainsAndNationAndGenreAndPriceLessThanEqual(String title, String category, String nation, String genre, int price);
 }

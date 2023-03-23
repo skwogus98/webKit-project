@@ -15,6 +15,8 @@ function AddBook() {
         try {
             const response = await axios.post("http://localhost:8000/insert", bookData);
             console.log(response.data);
+            alert("추가 되었습니다.")
+            window.location.href = ("/")
         } catch (error) {
             console.error(error);
         }

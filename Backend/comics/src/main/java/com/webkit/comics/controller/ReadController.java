@@ -31,7 +31,7 @@ public class ReadController {
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/bookSearch")
-    List<Book> bookSearch(@RequestParam String nation,@RequestParam String genre,@RequestParam String title) {
-        return bookService.searchBook(nation, genre, title);
+    List<Book> bookSearch(@RequestParam String nation,@RequestParam String genre,@RequestParam String title,@RequestParam int price) {
+        return bookService.searchBook(nation, genre, title, price);
     }
 }
